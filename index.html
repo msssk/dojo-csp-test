@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Dojo Toolkit CSP test app</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="app/app.css">
+</head>
+
+<body class="claro">
+	<div id="app">
+		<p>
+			This project serves as a simple test application to verify correct functioning of a Dojo Toolkit based
+			application with a strict Content Security Policy (no <code>unsafe-eval</code>). The test application is
+			configured with:<br>
+			<code>&lt;meta http-equiv="Content-Security-Policy" content="default-src 'self'"></code>
+		</p>
+
+		<p>
+			Using a strict Content Security Policy with Dojo imposes some restrictions on how Dojo can be used:
+		</p>
+
+		<ul>
+			<li>declare <code>dojoConfig</code> using JavaScript; avoid the <code>data-dojo-config</code> script attribute</li>
+			<ul>
+				<li><code>dojoConfig</code> must include the following:</li>
+				<li><code>async: true</code></li>
+				<li><code>'csp-restrictions': true</code></li>
+				<li><code>'dojo-v1x-i18n-Api': false</code></li>
+			</ul>
+			<li>use only AMD modules (avoid <code>dojo/_base/loader.js</code>)</li>
+			<li>avoid using <code>data-dojo-props</code></li>
+			<li><code>dojo/xhr</code>, <code>dojo/request</code></li>
+			<ul>
+				<li>avoid <code>handleAs: 'javascript'</code></li>
+				<li>avoid the <code>dojo/io/script</code> and <code>dojo/request/script</code> modules</li>
+			</ul>
+			<li>avoid using the <code>dojo/rpc/RpcService</code> module</li>
+		</ul>
+
+		<p>
+			Two versions of the same application are included:
+		</p>
+		<ul>
+			<li>
+				<a href="app16/index.html"><code>app16</code></a>: a version that works with Dojo 1.16
+				<ul>
+					<li><code>_WidetsInTemplateMixin</code> can be used, but no <code>data-dojo-props</code></li>
+					<li><code>dijit/Calendar</code> cannot be used because it depends on disabled
+						<code>dojo/i18n</code> functionality
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="app/index.html"><code>app</code></a>: a version that works with Dojo 1.17-pre and some patches
+				<ul>
+					<li><a href="https://github.com/dojo/dojo/pull/379">PR 379</a> enables <code>data-dojo-props</code>
+						that are valid <a href="https://github.com/json5/json5">JSON5</a>
+						(existing Dojo data attribute syntax minus JS expressions)
+					</li>
+					<li><a href="https://github.com/dojo/dojo/pull/381">PR 381</a> enables <code>dojo/i18n</code> to
+						load CLDR data which enables <code>dijit/Calendar</code> to work
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			The applications require the following folder structure:<br>
+			<pre>
+/
+    dgrid/
+    dijit/
+    dojo/
+    dojo-csp-test/
+    dojox/
+			</pre>
+		</p>
+	</div>
+</body>
+</html>

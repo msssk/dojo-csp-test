@@ -1,0 +1,82 @@
+[
+	{
+		"date": "2020/06/01",
+		"number": 28,
+		"color": "aqua"
+	},
+	{
+		"date": "2020/06/02",
+		"number": 13,
+		"color": "azure"
+	},
+	{
+		"date": "2020/06/03",
+		"number": 55,
+		"color": "beige"
+	},
+	{
+		"date": "2020/06/04",
+		"number": 49,
+		"color": "blue"
+	},
+	{
+		"date": "2020/06/05",
+		"number": 2,
+		"color": "brown"
+	},
+	{
+		"date": "2020/06/06",
+		"number": 14,
+		"color": "coral"
+	},
+	{
+		"date": "2020/06/07",
+		"number": 36,
+		"color": "crimson"
+	},
+	{
+		"date": "2020/06/08",
+		"number": 42,
+		"color": "fuchsia"
+	},
+	{
+		"date": "2020/06/09",
+		"number": 17,
+		"color": "gold"
+	},
+	{
+		"date": "2020/06/10",
+		"number": 28,
+		"color": "green"
+	},
+	{
+		"date": "2020/06/11",
+		"number": 35,
+		"color": "indigo"
+	},
+	{
+		"date": "2020/06/12",
+		"number": 40,
+		"color": "ivy"
+	},
+	{
+		"date": "2020/06/13",
+		"number": 8,
+		"color": "lavender"
+	},
+	{
+		"date": "2020/06/14",
+		"number": 11,
+		"color": "maroon"
+	},
+	{
+		"date": "2020/06/15",
+		"number": 19,
+		"color": "purple"
+	},
+	{
+		"date": "2020/06/16",
+		"number": 23,
+		"color": "red"
+	}
+]
